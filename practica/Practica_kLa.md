@@ -27,17 +27,17 @@ $$\mathrm{OTR}=k_La\,(C^*-C_L)$$
 
 Donde:
 
-- **OTR:** velocidad volumétrica de transferencia de oxígeno, por ejemplo, mg O₂·L⁻¹·h⁻¹.
-- **kLa:** coeficiente volumétrico de transferencia, h⁻¹.
-- **C∗:** concentración de saturación o concentración de oxígeno disuelto en equilibrio con la fase gaseosa, mg O₂/L.
-- **C_L:** concentración instantánea de oxígeno disuelto en el líquido, mg O₂/L.
-- **C∗ − C_L:** fuerza impulsora para la transferencia de oxígeno.
+- OTR: velocidad volumétrica de transferencia de oxígeno, por ejemplo, mg O₂·L⁻¹·h⁻¹.
+- kLa: coeficiente volumétrico de transferencia, h⁻¹.
+- C∗: concentración de saturación o concentración de oxígeno disuelto en equilibrio con la fase gaseosa, mg O₂/L.
+- $C_L$: concentración instantánea de oxígeno disuelto en el líquido, mg O₂/L.
+- $C^*-C_L$: fuerza impulsora para la transferencia de oxígeno.
 
 El coeficiente kLa integra dos contribuciones:
 
 $$k_La=k_L\times a$$
 
-Aquí, $k_L$ representa el coeficiente de transferencia de masa en la película líquida y $a$ es el área interfacial gas–líquido por unidad de volumen de líquido.
+Aquí, $k_L$ representa el coeficiente de transferencia de masa en la película líquida y $a$ es el área interfacial gas-líquido por unidad de volumen de líquido.
 
 Por tanto, kLa depende tanto de las condiciones hidrodinámicas prevalecientes en el biorreactor como de las propiedades físicas del sistema. No es una constante universal del biorreactor.
 
@@ -45,7 +45,7 @@ Por tanto, kLa depende tanto de las condiciones hidrodinámicas prevalecientes e
 
 Un valor elevado de kLa generalmente permite transferir más oxígeno al medio cuando existe una diferencia entre la concentración de saturación y la concentración real. Sin embargo, un kLa alto no garantiza por sí solo que las células reciban suficiente oxígeno: también importan la demanda celular, la mezcla, los gradientes locales y la presión parcial del oxígeno.
 
-En un cultivo celular, la velocidad de transferencia debe compararse con la velocidad de consumo de oxígeno, OUR. En estado estacionario:
+En un cultivo celular, la velocidad de transferencia debe compararse con la velocidad de consumo de oxígeno (OUR):
 
 $$\mathrm{OTR}=\mathrm{OUR}$$
 
@@ -53,51 +53,41 @@ Esta igualdad corresponde al estado estacionario en el balance de oxígeno disue
 
 # 3. Métodos experimentales para determinar kLa
 
-![Diagrama esquemático de un biorreactor agitado. Imagen de las notas técnicas originales; ilustra los componentes del montaje y no identifica el reactor Sartorius utilizado en el taller.](../figuras/02_biorreactor_esquema.jpeg)
+![Diagrama esquemático de un biorreactor agitado.](../figuras/02_biorreactor_esquema.jpeg)
 
 ## Método 1. Dinámico de reoxigenación
 
-Primero se desoxigena el medio, después se introduce aire y se registra el incremento del oxígeno disuelto con el tiempo. La medición requiere ausencia de consumo biológico y químico apreciable de oxígeno. Esto no equivale por sí solo a exigir esterilidad: en el taller se utiliza agua sin células añadidas y se supone despreciable el consumo durante el ensayo. Se obtiene kLa mediante una regresión lineal de la respuesta transformada.
+Primero se desoxigena el medio, después se introduce aire y se registra el incremento del oxígeno disuelto con el tiempo. Todo esto en ausencia de consumo de oxígeno, es decir, en condiciones estériles. En la práctica es adecuado obtener kLa mediante una regresión lineal.
 
 ## Método 2. Dinámico en un cultivo activo
 
-Se modifica temporalmente la aireación o se interrumpe el suministro de oxígeno y se analiza la respuesta del oxígeno disuelto. Se necesita considerar el consumo celular de oxígeno, por lo que el cálculo es más complejo.
+Se modifica temporalmente la aireación o se interrumpe el suministro de oxígeno y se analiza la respuesta del DO. Se necesita considerar el consumo celular de oxígeno, por lo que el cálculo es más complejo.
 
 ## Método 3. Balance de oxígeno en fase gaseosa
 
-Se determina el oxígeno que entra y sale del biorreactor y se calcula la transferencia al líquido. Requiere analizar el gas de salida y corregir los balances por humedad, caudal y composición. El caudal de entrada puede determinarse con controladores de flujo másico y una composición de alimentación conocida; la concentración de oxígeno de salida puede medirse con sensores paramagnéticos en línea. Para cerrar el balance debe conocerse o estimarse también el caudal de salida.
-
-En esta práctica se utiliza el método dinámico de reoxigenación, con volumen y aireación constantes y distintas velocidades de agitación.
+Se determina el oxígeno que entra y sale del biorreactor y se calcula la transferencia al líquido. Requiere analizar el gas de salida y corregir los balances por humedad, caudal y composición. El oxígeno que entra se puede determinar con controladores de flujo másico y el de salida mediante sensores paramagnéticos para mediciones en-línea.
 
 # 4. Método dinámico de reoxigenación: ecuaciones y derivación
 
 ## 4.1. Balance de oxígeno disuelto
 
-Para un líquido sin células, sin consumo biológico ni químico apreciable de oxígeno y bajo condiciones aproximadamente constantes, el balance es:
+Para un líquido sin células (sin consumo biológico de oxígeno), sin consumo químico de oxígeno y bajo condiciones aproximadamente constantes, el balance de oxígeno es:
 
 $$\frac{dC_L}{dt}=k_La\,(C^*-C_L)$$
 
-Si $C^*$ y kLa permanecen constantes durante la medición, la integración entre el tiempo inicial $t=0$, con concentración $C_0$, y un tiempo $t$, con concentración $C_t$, da:
-
-$$\int_{C_0}^{C_t}\frac{dC_L}{C^*-C_L}=\int_0^t k_La\,dt$$
+Si $C^*$ y kLa permanecen constantes durante la medición (por ejemplo, manteniendo la composición de gases de entrada, presión, temperatura, flujo de aireación y agitación constantes), la integración entre el tiempo inicial t = 0, con concentración $C_0$, y un tiempo t, con concentración $C_t$, da:
 
 $$\ln\left(\frac{C^*-C_0}{C^*-C_t}\right)=k_La\,t$$
 
-Esta ecuación constituye la base del método. $C_0$ es la concentración inicial y $C_t=C_L(t)$ es la concentración en el tiempo $t$. El tiempo se cuenta desde el inicio de la reoxigenación. Deben mantenerse constantes la composición del gas de entrada, la presión, la temperatura, el caudal y la agitación durante cada curva.
-
-La ecuación diferencial es de primer orden. Su solución también puede escribirse como:
-
-$$C_t=C^*-(C^*-C_0)e^{-k_La t}$$
-
-La constante de tiempo del modelo es $\tau=1/k_La$, usando unidades de tiempo compatibles. En una τ se recorre el $1-e^{-1}\approx63.2\,\%$ del cambio. Aquí τ describe la transferencia observada en el reactor; no es la constante de tiempo de la sonda aislada.
+Esta ecuación constituye la base del método.
 
 ## 4.2. Forma lineal para el cálculo
 
 Definimos la variable transformada:
 
-$$Y(t)=\ln\left(\frac{C^*-C_0}{C^*-C_t}\right)$$
+$$Y=\ln\left(\frac{C^*-C_0}{C^*-C_t}\right)$$
 
-Al graficar Y contra el tiempo t, se obtiene una recta cuya pendiente es kLa:
+Al graficar Y contra el tiempo t, se obtiene una recta cuya pendiente es:
 
 $$k_La=\text{pendiente}$$
 
@@ -105,31 +95,11 @@ Si el tiempo está expresado en minutos, el resultado será min⁻¹. Para conve
 
 $$k_La\,[\mathrm{h}^{-1}]=60\,k_La\,[\mathrm{min}^{-1}]$$
 
-Si se utilizan segundos, se multiplica la pendiente por 3600. La plantilla de cálculo del taller utiliza segundos.
+Alternativa con oxígeno disuelto en porcentaje de saturación: si la lectura de DO es proporcional a la concentración y el 100 % representa la saturación de equilibrio, puede utilizarse directamente:
 
-### Oxígeno disuelto en porcentaje de saturación
+$$\ln\left(\frac{100-C_0}{100-C_t}\right)=k_La\,t$$
 
-Si la lectura es proporcional a la concentración y el 100 % representa la saturación de equilibrio, puede utilizarse directamente:
-
-$$Y(t)=\ln\left(\frac{100-y_0}{100-y(t)}\right)=k_La\,t$$
-
-Aquí $y_0$ y $y(t)$ son las lecturas inicial e instantánea, ambas en porcentaje de saturación. Esta expresión requiere que el equilibrio corresponda efectivamente al 100 % de la escala utilizada. Si la sonda usa otra referencia o cambian presión, temperatura o composición gaseosa, debe emplearse el valor de equilibrio apropiado:
-
-$$Y(t)=\ln\left(\frac{y_\infty-y_0}{y_\infty-y(t)}\right)$$
-
-$y_\infty$ es la meseta final con aire. En el taller se utiliza la meseta observada en las condiciones de cada ensayo, sin sustituirla automáticamente por 100 %.
-
-Se ajusta una recta $Y=a+bt$; su pendiente $b$ estima kLa. Se permite una ordenada al origen para revisar posibles desplazamientos temporales y desviaciones del modelo, sin forzar la recta a pasar por cero.
-
-La transformación requiere $y_\infty>y_0$ y $y(t)<y_\infty$. Cerca de la meseta, una diferencia pequeña entre lectura y equilibrio amplifica el ruido del logaritmo. No calcular el logaritmo de cero ni de valores negativos.
-
-## 4.3. Selección del tramo
-
-Como criterio inicial del taller, ajustar la parte comprendida entre el 20 y el 80 % del recorrido observado:
-
-$$r(t)=\frac{y(t)-y_0}{y_\infty-y_0},\qquad 0.20\leq r(t)\leq0.80$$
-
-Estos porcentajes corresponden al cambio entre las mesetas, no necesariamente a 20 y 80 % de saturación. Revisar que el tramo sea aproximadamente lineal, que las rpm y el aire sean constantes y que haya suficientes muestras. El intervalo es un criterio de análisis; puede requerir revisión con el instructor si el inicio tiene un retraso evidente o el ajuste muestra curvatura.
+Esta expresión requiere que la saturación de equilibrio corresponda efectivamente al 100 % de la escala utilizada. Si la sonda utiliza otra referencia o cambia la presión, la temperatura o la composición del gas, debe emplearse el valor de equilibrio apropiado.
 
 # 5. Protocolo experimental
 
@@ -165,6 +135,18 @@ Distribuir las tareas de operación, tiempo, adquisición, revisión de condicio
 | 40–45 min | Comparar resultados y documentar curvas incompletas o incidentes. |
 
 La adquisición del barrido se probó en el laboratorio en aproximadamente 30 minutos, según las notas de preparación del taller. Reservar hasta 45 minutos para que cada equipo complete el análisis. Los tiempos por curva dependen de la respuesta observada; no sustituir una meseta ausente por el último dato para cumplir el cronograma.
+
+## Cálculo con los registros del taller
+
+En la fórmula con 100 %, $C_0$ y $C_t$ representan lecturas en porcentaje de saturación. Para el análisis del taller se utilizan $y_0$, $y(t)$ y la meseta final observada $y_\infty$, todas en la misma escala:
+
+$$Y(t)=\ln\left(\frac{y_\infty-y_0}{y_\infty-y(t)}\right)$$
+
+La plantilla utiliza tiempo en segundos, por lo que kLa [h⁻¹] = 3600 × pendiente [s⁻¹]. Ajusta una recta con ordenada libre y selecciona inicialmente el tramo entre el 20 y el 80 % del recorrido:
+
+$$r(t)=\frac{y(t)-y_0}{y_\infty-y_0},\qquad0.20\leq r(t)\leq0.80$$
+
+Estos porcentajes corresponden al cambio entre las mesetas, no necesariamente a 20 y 80 % de saturación. Revisar la linealidad y la suficiencia de las muestras. La transformación requiere $y_\infty>y_0$ y $y(t)<y_\infty$. No calcular el logaritmo de cero ni de valores negativos.
 
 ## 5.3. Procedimiento por velocidad
 
