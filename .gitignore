@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+.claude/
+.codex/
+.env
+.env.*
+~$*
+.DS_Store
+
+.local-backups/
+.~lock.*#
+
+# Documentos originales de OTR: conservar solo en el equipo local.
+/Version_OTR.docx
+/Notas*.docx
+
+# Documentos originales de OTR: conservar solo en el equipo local.
+/Version_OTR.docx
+/Notas*.docx
