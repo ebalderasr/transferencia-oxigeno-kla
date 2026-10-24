@@ -53,4 +53,8 @@ La tabla ilustrativa del documento de origen no se trasladó: sus valores transf
 
 # 6. Fuentes del material
 
-El fundamento se adaptó de las notas técnicas de determinación de kLa incluidas en este proyecto. El formato corresponde a las prácticas de respuesta de sensores y control de oxígeno. La bibliografía del documento de origen se conserva allí para consulta; los resultados del taller se documentarán con sus propios registros.
+La práctica se basa en las notas técnicas de determinación de kLa de OTR, con las condiciones de operación adaptadas al reactor Sartorius de 50 L y 30 L de agua. El formato corresponde a las prácticas de respuesta de sensores y control de oxígeno. La bibliografía recomendada del documento de origen se incluye en la guía de participantes. Los resultados del taller se documentarán con sus propios registros.
+
+## Revisión de la notación del documento original
+
+En la integración del balance, el numerador es C* − C₀, donde C₀ es la concentración inicial. Usar C_L sin indicar que se trata del valor inicial haría ambigua la expresión. La ausencia de consumo de oxígeno es una hipótesis del balance y no equivale a esterilidad. En el método de fase gaseosa, medir la concentración de oxígeno de salida requiere además conocer o estimar el caudal para cerrar el balance.

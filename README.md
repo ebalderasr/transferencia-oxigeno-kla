@@ -1,6 +1,6 @@
 # Determinación de kLa en un biorreactor agitado
 
-Material del taller de transferencia de oxígeno. Cada equipo obtiene curvas de reoxigenación a 200, 400, 600, 800 y 1000 rpm, calcula un kLa por condición y construye un barrido de kLa frente a rpm.
+Material del taller de transferencia de oxígeno, basado en las notas técnicas de OTR y adaptado al reactor de 50 L con 30 L de agua. Cada equipo obtiene curvas de reoxigenación a 200, 400, 600, 800 y 1000 rpm, calcula un kLa por condición y construye un barrido de kLa frente a rpm.
 
 | Condición | Valor |
 |---|---|

@@ -237,7 +237,7 @@ def figuras(doc, ancho_cm=14):
         forma.height = int(Cm(ancho) * proporcion)
 
 
-def saltos_de_pagina(doc, inicios=("10. Hoja de datos", "Anexo para el instructor")):
+def saltos_de_pagina(doc, inicios=("6. Registro experimental", "Anexo para el instructor")):
     """La hoja de datos y el anexo empiezan en página nueva (se imprimen o quitan por separado)."""
     for p in doc.paragraphs:
         if p.style.style_id == "Heading1" and p.text.startswith(inicios):
